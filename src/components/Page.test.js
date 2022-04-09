@@ -12,28 +12,5 @@ describe('Page', function () {
     mockOnClick = jest.fn()
   })
 
-  describe('with default props', function () {
-    it('renders default message', () => {
-      render(<Page />)
-      const message = screen.getByText('Hello Interviewer')
-      expect(message).toBeInTheDocument()
-    })
-
-    it('renders default emoji', () => {
-      render(<Page />)
-      const message = screen.getByText('👋')
-      expect(message).toBeInTheDocument()
-    })
-
-    describe('when provided with onClick', function () {
-      it('calls onClick when Clicked', async () => {
-        render(<Page onClick={mockOnClick} />)
-        const user = userEvent.setup()
-        const card = screen.getByTestId('card')
-
-        await user.click(card, { delay: 1000 })
-        expect(mockOnClick).toHaveBeenCalledTimes(1)
-      })
-    })
-  })
+  describe('with default props', function () {})
 })
